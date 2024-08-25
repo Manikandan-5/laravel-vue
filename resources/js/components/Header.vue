@@ -3,7 +3,7 @@
       <div id="home">
         <div class="input-group mb-3">
           <input v-model="query" placeholder="Enter Recipe Name" aria-label="Search term" aria-describedby="button-addon2" type="text" class="form-control"/>
-          <button @click="search" class="btn btn-warning" type="button" id="button-addon2">Get Started!!</button>
+          <button @click="search" class="btn btn-warning text-white" type="button" id="button-addon2">Get Started!!</button>
         </div>
       </div>
   
@@ -78,12 +78,15 @@
   .loading {
     font-size: 1.5rem;
     font-weight: bold;
+    color:yellow
   }
   
   #home {
     background: url("https://recipesblob.oetker.in/assets/9447029b80054ee49f3ac21841884874/1272x764/dabeli.webp") no-repeat center ;
     background-size: cover;
-     padding: 120px
+     padding: 120px;
+     border:2px solid yellow;
+     border-radius: 20px;
   }
   
   .input-group {
@@ -120,5 +123,18 @@
   .me-2 {
     margin-right: 0.5rem;
   }
+  .card {
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  }
+  
+.card-body {
+  background: rgb(5, 6, 45);
+  width: 100%;
+  height: 100%;
+  color:white
+}
   </style>
   
