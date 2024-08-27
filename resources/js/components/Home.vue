@@ -31,7 +31,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <router-link to="/feedback" class="nav-link" style="color:#b531bb">Review</router-link>
+                        <router-link to="/comments" class="nav-link" style="color:#b531bb">Review</router-link>
                     </li>
                 </ul>
                 <div class="me-2">

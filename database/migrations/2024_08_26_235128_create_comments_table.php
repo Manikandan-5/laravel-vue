@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('comment');
             $table->string('fullname');
-            $table->string('like');
+            // $table->string('like');
 
             $table->timestamps();
         });

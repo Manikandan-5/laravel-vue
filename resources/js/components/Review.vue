@@ -1,38 +1,91 @@
 <template>
-  <h1>Revie</h1>
-  <form @submit.prevent="search" class="d-flex">
-<input
-  placeholder="Enter Recipe Name"
-  required
-  type="text"
-  value=""
-  class="form-control me-2"
-/>
-<button
-  type="submit" 
-  class="btn text-white"
-  id="button-addon2"
-  style="background-color:#b531bb"
-  :disabled="loading"
->
-  {{ loading ? 'Loading...' : 'Get Started!!' }}
-</button>
+  <div>
+    <h1>Review</h1>
+    <form class="d-flex" @submit.prevent="save">
+  <div class="input-group">
+    <input
+      type="text"
+      placeholder="Enter  Name"
+      required
+      class="form-control me-2"
+      v-model="comments.fullname"
+    />
+    <input
+      type="text"
+      placeholder="Enter Comment"
+      required
+      class="form-control me-2"
+       v-model="comments.comment"
+    />
+    <button
+      type="submit"
+      class="btn text-white"
+      id="button-addon2"
+      style="background-color: #b531bb"
+    >Comment
+    </button>
+  </div>
 </form>
-<div class="cardd">
-<div>
-  <p>{{ name }}</p>
-  <p>{{ comment }}</p>
-</div>
-</div>
 
+    <div class="d-flex">
+    <ul  v-for="task in result" :key="task.id" >
+    <li class="cardd d-block mt-3">
 
+        <p>{{ task.fullname }}</p>
+        <p>{{ task.comment }}</p>
+      </li>
+
+    </ul></div>
+  </div>
 </template>
 
 <script>
+import axios from 'axios';
 
+export default {
+  name: "Review",
+  data() {
+    return {
+      result: [], // Initialize as an empty array
+      comment:{
+        id:"",
+        fullname:"",
+        comment:""
+      }
+    };
+  },
+  created() {
+    this.comments();
+  },
+  methods: {
+    comments() {
+      const page = "http://127.0.0.1:8000/api/comments";
+      axios.get(page)
+        .then(({ data }) => {
+          console.log(data);
+          this.result = data;
+        })
+        .catch(error => {
+          console.error("There was an error!", error);
+        })
+        .finally(() => {
+          this.loading = false; // End loading
+        });
+    },
+    save(){
+      this.saveData();
+    },
+    saveData(){
+      axios.post('http://127.0.0.1:8000/api/save',this.comment)
+      .then(({data})=>{
+        alert("Sace")
+      })
+    }
+  }
+};
 </script>
 
-<style setup>
+<style scoped>
 /* From Uiverse.io by SteveBloX */ 
 .cardd {
   box-sizing: border-box;
@@ -63,5 +116,3 @@
   transform: scale(0.95) rotateZ(1.7deg);
 }
 </style>
-
-

@@ -15,7 +15,7 @@ const routes=[
         component:About
     },
     {
-        path:'/feedback',
+        path:'/comments',
         component:Review
     },
 ]
