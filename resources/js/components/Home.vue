@@ -21,18 +21,17 @@
                 <span class="navbar-toggler-icon" style="color:#b531bb"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"
-                        style="color:#b531bb">Home</a
-                        >
+                        <router-link to="/"  class="nav-link" style="color:#b531bb">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color:#b531bb">About</a>
+                        <router-link to="/about" class="nav-link" style="color:#b531bb">About</router-link>
+
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true" style="color:#b531bb">Comment</a>
+                        <router-link to="/feedback" class="nav-link" style="color:#b531bb">Review</router-link>
                     </li>
                 </ul>
                 <div class="me-2">

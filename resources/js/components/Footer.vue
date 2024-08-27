@@ -1,5 +1,6 @@
 <template>
-    <footer class="footer mt-auto py-3 " style="background-color:#b531bb">
+    <div class="mt-5">
+    <footer class="footer mt-auto py-3" style="background-color:#b531bb">
         <div class="container text-center">
             <div class="row mb-3">
                 <div class="col-md-3">
@@ -28,9 +29,9 @@
                 <div class="col-md-3">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-decoration-none text-white">Home</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">About</a></li>
-                        <li><a href="#" class="text-decoration-none text-white">Comments</a></li>
+                        <li><router-link to="/"   class="text-decoration-none text-white">Home</router-link></li>
+                        <li><router-link to="/about" class="text-decoration-none text-white">About</router-link></li>
+                        <li><router-link to="/review" class="text-decoration-none text-white">Comments</router-link></li>
                         <li><a href="#" class="text-decoration-none text-white"> || Terms of Service</a></li>
                     </ul>
                 </div>
@@ -46,7 +47,7 @@
             </div>
             <p class="mt-2 mb-0 fw-bold text-white">&copy; Manikandan || All Rights Reserved</p>
         </div>
-    </footer>
+    </footer></div>
 </template>
 
 <style scoped>

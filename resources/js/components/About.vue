@@ -2,7 +2,7 @@
   <section id="about-us">
 
     <div id="carouselExampleAutoplaying" class="carousel slide p-4" data-bs-ride="carousel">
-      <div class="carousel-inner rounded-5">
+      <div class="carousel-inner rounded-5" style="height: 40vh;">
         <div 
           class="carousel-item" 
           :class="{ active: index === 0 }" 
@@ -21,15 +21,15 @@
       </button>
     </div>
 
-    <div class="container my-5">
+    <div class="container ">
       <div class="row">
 
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <img src="https://images.pexels.com/photos/17379717/pexels-photo-17379717/free-photo-of-lilac-colored-petit-four-cake-with-yellow-cherry-and-a-glass-of-fruit-milkshake.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dessert image" class="img-fluid rounded-5" style="border:2px solid #db7fdf">
+        <div class="col-lg-6">
+          <img src="https://media.istockphoto.com/id/1300513392/vector/happy-man-in-apron-mixing-ingredients-in-bowl.jpg?s=612x612&w=0&k=20&c=y2eEO4h2htJ1W1h0HwWzB54yXcbxiyHojngMwPZDhtE=" alt="Dessert image" class="img-fluid rounded-5" style="border:2px solid #db7fdf;height: 100%;">
         </div>
 
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 class="display-4 mb-4" style="color:#cca5ce">What We Do</h1>
+        <div class="col-lg-6 ">
+          <h1 class="display-4" style="color:#cca5ce">What We Do</h1>
           <p class="lead">
             We strive to make your cooking experience enjoyable and fulfilling. Our website features:
           </p>
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div class="container mb-5">
+    <div class="container mb-5 mt-5">
       <h2 class="text-center fw-bold" style="font-family:Baskervville SC;color:#db7fdf;">
         “Sharing food with another human being is an intimate act that should not be indulged in lightly. When we cook for others, we offer not only our food but also our time, our care, and our love.”
       </h2>

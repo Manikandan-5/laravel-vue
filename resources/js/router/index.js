@@ -1,18 +1,23 @@
+
 import {createRouter,createWebHistory} from 'vue-router';
 import Header from '../components/Header.vue'
 import About from '../components/About.vue'
-import ExampleComponent from '../components/ExampleComponent.vue';
+import Review from '../components/Review.vue'
 
 
 const routes=[
     {
         path:'/',
-        component:ExampleComponent
+        component:Header
     },
     {
         path:'/about',
         component:About
-    }
+    },
+    {
+        path:'/feedback',
+        component:Review
+    },
 ]
 
 const router = createRouter({
