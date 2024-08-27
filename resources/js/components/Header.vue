@@ -3,11 +3,12 @@
       <div id="home">
         <div class="input-group mb-3">
           <input v-model="query" placeholder="Enter Recipe Name" aria-label="Search term" aria-describedby="button-addon2" type="text" class="form-control"/>
-          <button @click="search" class="btn btn-warning text-white" type="button" id="button-addon2">Get Started!!</button>
-        </div>
+          
+        <button @click="search" class="btn  text-white" type="button" id="button-addon2" style="background-color:#b531bb">Get Started!!</button>
+      </div>  
       </div>
   
-      <div v-if="loading" class="loading">Loading...</div>
+      <div v-if="loading" class="loading " style="color:#b531bb">Loading...</div>
       <div v-if="error" class="error">{{ error }}</div>
   
       <div v-if="data">
@@ -21,12 +22,12 @@
                 <i class="bi bi-arrow-right-short"></i>
               </h6>
               <ul class="list-unstyled">
-                <h3 class="text-warning">INGREDIENT'S: </h3>
+                <h3  style="color:#b531bb">INGREDIENT'S: </h3>
                 <li v-for="ingredient in item.recipe.ingredientLines" :key="ingredient" class="d-flex align-items-center mb-2">
-                  <i class="bi bi-balloon-heart-fill text-warning  me-2"></i>{{ ingredient }}
+                  <i class="bi bi-balloon-heart-fill   me-2" style="color:#b531bb"></i>{{ ingredient }}
                 </li>
               </ul>
-              <a :href="item.recipe.url" target="_blank" class="btn btn-warning">Recipe</a>
+              <a :href="item.recipe.url" target="_blank" class="btn" style="background-color:#b531bb;color:white">Recipe</a>
             </div>
           </div>
         </div>
@@ -54,6 +55,7 @@
         this.error = null;
   
         try {
+         
           const response = await axios.get(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
           this.data = response.data;
         } catch (error) {
@@ -78,14 +80,14 @@
   .loading {
     font-size: 1.5rem;
     font-weight: bold;
-    color:yellow
+    color:#b531bb
   }
   
   #home {
     background: url("https://recipesblob.oetker.in/assets/9447029b80054ee49f3ac21841884874/1272x764/dabeli.webp") no-repeat center ;
     background-size: cover;
      padding: 120px;
-     border:2px solid yellow;
+     border:2px solid #b531bb;
      border-radius: 20px;
   }
   

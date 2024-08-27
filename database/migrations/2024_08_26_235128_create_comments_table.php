@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('comment');
             $table->string('fullname');
-            $table->boolean('like'); // Corrected method from 'boolval' to 'boolean'
+            $table->string('like');
+
             $table->timestamps();
         });
     }

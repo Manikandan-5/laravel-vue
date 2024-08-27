@@ -4,11 +4,12 @@
             <a class="navbar-brand" href="/">
                 <img heigh="100px"
                 width="100px"
-                    src="https://png.pngtree.com/template/20191015/ourmid/pngtree-chef-abstract-kitchener-cooky-icon-logo-image_317353.jpg"
+                    src="https://static.vecteezy.com/system/resources/previews/007/559/224/non_2x/recipe-food-logo-design-template-free-vector.jpg"
                     alt="Recipe-logo"
                 />
             </a>
             <button
+                
                 class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -17,27 +18,27 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
             >
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon" style="color:#b531bb"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#"
-                            >Home</a
+                        style="color:#b531bb">Home</a
                         >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#" style="color:#b531bb">About</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true">Contact</a>
+                        <a class="nav-link" aria-disabled="true" style="color:#b531bb">Comment</a>
                     </li>
                 </ul>
                 <div class="me-2">
-                    <i class="bi bi-facebook"></i>&nbsp;
-                    <i class="bi bi-instagram"></i>&nbsp;
-                    <i class="bi bi-twitter"></i>&nbsp;
+                    <i class="bi bi-facebook" style="color:#b531bb"></i>&nbsp;
+                    <i class="bi bi-instagram" style="color:#b531bb"></i>&nbsp;
+                    <i class="bi bi-twitter" style="color:#b531bb"></i>&nbsp;
                 </div>
             </div>
         </div>
