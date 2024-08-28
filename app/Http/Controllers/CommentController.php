@@ -24,17 +24,12 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         // Validate the request data
-        $validated = $request->validate([
-            'fullname' => 'required|string|max:255',
-            'comments' => 'required|string',
-        ]);
-    
-        // Create a new comment instance
         $comments = new Comment([
-            'name' => $validated['fullname'],
-            'comments' => $validated['comments'],
+            'comment'=>$request->input('comment'),
+            'fullname'=>$request->input('fullname'),
         ]);
     
+      
         $comments->save();
     
         return response()->json( 'Comment created');

@@ -8,7 +8,7 @@
           :class="{ active: index === 0 }" 
           v-for="(image, index) in images" 
           :key="index">
-          <img :src="image.src" :alt="image.alt" class="d-block w-100" style="border:2px solid #db7fdf">
+          <img :src="image.src" :alt="image.alt" class="d-block w-100 img-fluid " style="border:2px solid #db7fdf">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -67,6 +67,7 @@ export default {
 <style>
 
 .carousel-inner img {
-  object-fit: cover;
+  object-fit: cover; 
 }
+
 </style>

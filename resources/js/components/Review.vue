@@ -1,41 +1,46 @@
 <template>
   <div>
-    <h1>Review</h1>
     <form class="d-flex" @submit.prevent="save">
-  <div class="input-group">
-    <input
-      type="text"
-      placeholder="Enter  Name"
-      required
-      class="form-control me-2"
-      v-model="comments.fullname"
-    />
-    <input
-      type="text"
-      placeholder="Enter Comment"
-      required
-      class="form-control me-2"
-       v-model="comments.comment"
-    />
-    <button
-      type="submit"
-      class="btn text-white"
-      id="button-addon2"
-      style="background-color: #b531bb"
-    >Comment
-    </button>
-  </div>
-</form>
-
-    <div class="d-flex">
-    <ul  v-for="task in result" :key="task.id" >
-    <li class="cardd d-block mt-3">
-
-        <p>{{ task.fullname }}</p>
-        <p>{{ task.comment }}</p>
-      </li>
-
-    </ul></div>
+      <div class="input-group">
+        <input
+          type="text"
+          placeholder="Enter Name"
+          required
+          class="form-control me-2"
+          v-model="comment.fullname"
+        />
+        <input
+          type="text"
+          placeholder="Enter Comment"
+          required
+          class="form-control me-2"
+          v-model="comment.comment"
+        />
+        <button
+          type="submit"
+          class="btn text-white"
+          id="button-addon2"
+          style="background-color: #b531bb"
+        >
+          Comment
+        </button>
+      </div>
+    </form>
+    <div class="container mt-4">
+      <div class="row">
+        <div
+          v-for="task in result"
+          :key="task.id"
+          class="col-lg-3 col-md-4 mb-4"
+        >
+          <div class="cardd p-3 d-block">
+            <p>{{ task.fullname }}</p>
+            <p>{{ task.comment }}</p>
+            <p>Thank You <i class="bi bi-chat-heart-fill text-danger h4"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -47,39 +52,50 @@ export default {
   data() {
     return {
       result: [], // Initialize as an empty array
-      comment:{
-        id:"",
-        fullname:"",
-        comment:""
+      comment: {
+        id: "",
+        fullname: "",
+        comment: ""
       }
     };
   },
   created() {
-    this.comments();
+    this.fetchComments();
   },
   methods: {
-    comments() {
-      const page = "http://127.0.0.1:8000/api/comments";
-      axios.get(page)
+    fetchComments() {
+      axios.get('http://127.0.0.1:8000/api/comments')
         .then(({ data }) => {
-          console.log(data);
           this.result = data;
         })
         .catch(error => {
           console.error("There was an error!", error);
-        })
-        .finally(() => {
-          this.loading = false; // End loading
         });
     },
-    save(){
+    save() {
       this.saveData();
     },
-    saveData(){
-      axios.post('http://127.0.0.1:8000/api/save',this.comment)
-      .then(({data})=>{
-        alert("Sace")
+    saveData() {
+      axios.post('http://127.0.0.1:8000/api/save', this.comment, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       })
+      .then(({ data }) => {
+        alert("Saved");
+        this.fetchComments(); 
+        this.resetComment();
+      })
+      .catch(error => {
+        console.error("There was an error!", error);
+      });
+    },
+    resetComment() {
+      this.comment = {
+        id: "",
+        fullname: "",
+        comment: ""
+      };
     }
   }
 };
@@ -90,7 +106,7 @@ export default {
 .cardd {
   box-sizing: border-box;
   width: 190px;
-  height: 254px;
+  height:auto;
   background: rgba(217, 217, 217, 0.58);
   border: 1px solid white;
   box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);

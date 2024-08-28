@@ -31,7 +31,7 @@
                     <ul class="list-unstyled">
                         <li><router-link to="/"   class="text-decoration-none text-white">Home</router-link></li>
                         <li><router-link to="/about" class="text-decoration-none text-white">About</router-link></li>
-                        <li><router-link to="/review" class="text-decoration-none text-white">Comments</router-link></li>
+                        <li><router-link to="/comments" class="text-decoration-none text-white">Comments</router-link></li>
                         <li><a href="#" class="text-decoration-none text-white"> || Terms of Service</a></li>
                     </ul>
                 </div>
