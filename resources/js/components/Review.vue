@@ -34,9 +34,9 @@
           class="col-lg-3 col-md-4 mb-4"
         >
           <div class="cardd p-3 d-block">
-            <p>{{ task.fullname }}</p>
+            <p style="color:#b531bb">Name : {{ task.fullname }}</p>
             <p>{{ task.comment }}</p>
-            <p>Thank You <i class="bi bi-chat-heart-fill text-danger h4"></i></p>
+            <p style="color:#b531bb">Thank You <i class="bi bi-chat-heart-fill text-danger h4"></i></p>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@ export default {
         }
       })
       .then(({ data }) => {
-        alert("Saved");
+        alert("Thank You For Feedback!!")
         this.fetchComments(); 
         this.resetComment();
       })
